@@ -2,4 +2,5 @@
 
 Projeto de chamados internos utilizando RECAT JS e FIREBASE
 
-## Available Scripts
+## Link para acessar
+https://sis-tickets.netlify.app/
