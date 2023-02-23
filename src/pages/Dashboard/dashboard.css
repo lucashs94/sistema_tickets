@@ -98,6 +98,7 @@ table td .badge{
 @media screen and (max-width: 600px){
     table{
         border: 0;
+        line-height: 0.4em;
     }
     table caption{
         font-size: 1.3em;
@@ -117,9 +118,9 @@ table td .badge{
         margin-bottom: 0.6em;
     }
     table td{
-        border-bottom: 1px solid #DDD;
+        /* border-bottom: 1px solid #DDD; */
         display: block;
-        font-size: 0.8em;
+        font-size: 1.2em;
         text-align: right;
     }
 
@@ -127,6 +128,6 @@ table td .badge{
         content: attr(data-label);
         float: left;
         font-weight: bold;
-        text-transform: uppercase;
+        text-transform: capitalize;
     }
 }

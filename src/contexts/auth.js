@@ -153,3 +153,6 @@ export default function AuthProvider( {children} ){
     </AuthContext.Provider>
   )
 }
+
+// TODO: Implementar tempo de experição de Login
+// TODO: Proibir retorno para login/register, se logado

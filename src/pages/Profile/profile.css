@@ -62,11 +62,21 @@
 }
 
 .logout-btn{
+    /* width: 90%;
+    height: 35px; */
     padding: 8px 20px;
     border: 1px solid #121212;
     background-color: transparent;
     border-radius: 5px;
-    font-size: 1.4em;
+    font-size: 1.3em;
     justify-content: center;
     align-items: center;
+}
+
+
+@media screen and (max-width: 500px){
+    .logout-btn{
+        width: 90%;
+        height: 35px;
+    }
 }

@@ -8,6 +8,8 @@ import { addDoc, collection } from 'firebase/firestore'
 import { FiUser } from 'react-icons/fi'
 import { toast } from 'react-toastify'
 
+import './customers.css'
+
 export default function Customers() {
 
     const [nome, setNome] = useState('')
@@ -56,7 +58,7 @@ export default function Customers() {
 
                 <div className='container'>
                     <form className='form-profile' onSubmit={handleRegister}>
-                        <label>Nomwe fantasia:</label>
+                        <label>Nome fantasia:</label>
                         <input 
                             type='text'
                             placeholder='Nome da empresa'

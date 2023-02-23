@@ -199,32 +199,36 @@ export default function New(){
                         
                         <label className='status-label'>Status</label>
                         <div className='status'>
-                            <input
-                                type='radio'
-                                name='radio'
-                                value='Aberto'
-                                onChange={handleOptionChange}
-                                checked={ status === 'Aberto' }
-                            />
-                            <span>Em aberto</span>
-                            
-                            <input
-                                type='radio'
-                                name='radio'
-                                value='Progresso'
-                                onChange={handleOptionChange}
-                                checked={ status === 'Progresso' }
-                            />
-                            <span>Progresso</span>
-                            
-                            <input
-                                type='radio'
-                                name='radio'
-                                value='Atendido'
-                                onChange={handleOptionChange}
-                                checked={ status === 'Atendido' }
-                            />
-                            <span>Atendido</span>
+                            <div className='opt'>
+                                <input
+                                    type='radio'
+                                    name='radio'
+                                    value='Aberto'
+                                    onChange={handleOptionChange}
+                                    checked={ status === 'Aberto' }
+                                />
+                                <span>Em aberto</span>
+                            </div>
+                            <div className='opt'>
+                                <input
+                                    type='radio'
+                                    name='radio'
+                                    value='Progresso'
+                                    onChange={handleOptionChange}
+                                    checked={ status === 'Progresso' }
+                                />
+                                <span>Progresso</span>
+                            </div>
+                            <div className='opt'>
+                                <input
+                                    type='radio'
+                                    name='radio'
+                                    value='Atendido'
+                                    onChange={handleOptionChange}
+                                    checked={ status === 'Atendido' }
+                                />
+                                <span>Atendido</span>
+                            </div>
                         </div>
                         
                         <label>Complemento</label>

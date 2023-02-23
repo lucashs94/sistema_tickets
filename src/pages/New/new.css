@@ -1,3 +1,8 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
 
 form textarea{
     resize: none;
@@ -9,7 +14,7 @@ form input[type="radio"]{
 }
 
 form input[type="radio"]:not(:first-child){
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 .status span{
@@ -18,10 +23,17 @@ form input[type="radio"]:not(:first-child){
 }
 
 .status{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 1.5em;
-    margin-top: -0.7em;
+    margin-top: -0.9em;
+    margin-left: 1.5em;
 }
 
 .status-label{
     margin-top: 1em;
+}
+
+form button{
+    width: 100%;
 }
