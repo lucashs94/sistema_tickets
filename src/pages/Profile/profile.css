@@ -1,16 +1,17 @@
 
 .container{
     display: flex;
+    flex-direction: row;
     background-color: #f8f8f8;
     border-radius: 5px;
-    padding: 0.8em;
-    align-items: center;
+    padding: 2em;
+    /* align-items: center; */
     margin-bottom: 1em;
 }
 
 .label-avatar{
-    width: 280px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +51,7 @@
     padding: 0.7em;
     border: 0;
     border-radius: 5px;
-    max-width: 600px;
+    max-width: 400px;
 }
 
 .form-profile input:disabled{
@@ -58,7 +59,7 @@
 }
 
 .form-profile button{
-    max-width: 600px;
+    max-width: 400px;
 }
 
 .logout-btn{
@@ -78,5 +79,10 @@
     .logout-btn{
         width: 90%;
         height: 35px;
+    }
+
+    .form-profile label:first-child{
+        display: flex;
+        align-items: center;
     }
 }

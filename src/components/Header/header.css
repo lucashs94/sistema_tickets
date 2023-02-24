@@ -10,7 +10,7 @@
 }
 
 .sidebar div{
-    background: url('../../assets/cover.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('../../assets/cover.png');
     background-color: #181c2e;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,6 +41,12 @@
     transition: ease-in-out 0.4s;
 }
 
+.sidebar a:last-child{
+    position: absolute;
+    bottom: 10px;
+    padding: 16px 70px;
+}
+
 .sidebar a svg{
     margin-right: 0.5rem;
 }
@@ -54,6 +60,27 @@
     margin-left: 200px;
     padding: 1px 16px;
 }
+
+.sidebar button{
+    padding: 16px;
+    display: flex;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #181c2e;
+    border: 0;
+    align-items: center;
+    transition: ease-in-out 0.4s;
+    position: absolute;
+    bottom: 10px;
+    padding: 16px 60px;
+    font-size: 18px;
+}
+
+.sidebar button svg{
+    margin-right: 10px;
+}
+
+
 
 @media screen and (max-width: 700px){
     .sidebar{
@@ -70,6 +97,12 @@
         float: left;
     }
 
+    .sidebar button{
+        position: inherit;
+        bottom: inherit;
+        padding: 16px;
+    }
+
     .sidebar div{
         display: none;
     }
@@ -81,6 +114,10 @@
         float: none;
     }
     .sidebar a svg{
+        display: none;
+    }
+    
+    .sidebar button svg{
         display: none;
     }
 }

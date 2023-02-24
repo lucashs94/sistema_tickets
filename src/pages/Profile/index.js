@@ -10,6 +10,7 @@ import { doc, updateDoc } from 'firebase/firestore'
 import { FiSettings, FiUpload } from 'react-icons/fi'
 import avatar from '../../assets/avatar.png'
 import { toast } from 'react-toastify'
+
 import './profile.css'
 
 export default function Profile(){
@@ -104,8 +105,6 @@ export default function Profile(){
     }
 
 
-
-
     return(
         <div>
             <Header />
@@ -125,9 +124,9 @@ export default function Profile(){
 
                             <input type='file' accept='image/*' onChange={handleFile}/> <br/>
                             {avatarUrl === null ? (
-                                <img src={avatar} alt='Foto de perfil' width={250} height={250} />
+                                <img src={avatar} alt='Foto de perfil' width={100} height={250} />
                             ) : (
-                                <img src={avatarUrl} alt='Foto de perfil' width={250} height={250} />
+                                <img src={avatarUrl} alt='Foto de perfil' width={100} height={250} />
                             )}
                         </label>
 
@@ -145,9 +144,9 @@ export default function Profile(){
                     </form>
                 </div>
 
-                <div className='container'>
+                {/* <div className='container'>
                     <button className='logout-btn' onClick={ ()=> sign_Out() }>Sair</button>
-                </div>
+                </div> */}
             
             </div>
             

@@ -1,4 +1,12 @@
+.form-profile button{
+    margin-top: 20px;
+}
 
-label{
-    font-size: 5em;
+.form-profile label{
+    font-size: 1.2em;
+    line-height: 2.5em;
+}
+
+.form-profile input{
+    margin-top: -10px;
 }

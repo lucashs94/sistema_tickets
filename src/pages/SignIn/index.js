@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react'
 import { AuthContext } from '../../contexts/auth'
 
-import './signin.css'
-
 import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
+
+import './signin.css'
 
 export default function SignIn() {
 

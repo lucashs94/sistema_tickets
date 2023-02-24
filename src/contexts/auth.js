@@ -59,7 +59,7 @@ export default function AuthProvider( {children} ){
       setLoadingAuth(false)
 
       toast.success(`Bem Vindo de volta :)`,{
-        position: `top-right`,
+        position: `top-center`,
         pauseOnHover: false,
       })
 
@@ -154,5 +154,5 @@ export default function AuthProvider( {children} ){
   )
 }
 
-// TODO: Implementar tempo de experição de Login
+// TODO: Implementar tempo de expiração de Login
 // TODO: Proibir retorno para login/register, se logado
