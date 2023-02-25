@@ -1,17 +1,22 @@
-import { useState, useContext } from 'react'
-import { AuthContext } from '../../contexts/auth'
+import { useState } from 'react'
+import { useAuth } from '../../contexts/auth'
 
 import logo from '../../assets/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import './signin.css'
 
 export default function SignIn() {
+  
+  const { sign_In, loadingAuth, signed } = useAuth()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { sign_In, loadingAuth } = useContext(AuthContext)
+  if(signed){
+    return <Redirect to='/dashboard' /> 
+  }
+
 
   async function handleSubmit(e){
     e.preventDefault()

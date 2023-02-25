@@ -81,7 +81,7 @@ export default function New(){
             setComplemento(snapshot.data().complemento)
 
             let index = lista.findIndex(item => item.id === snapshot.data().clienteId)
-            setCustomerSelected(index)
+            setCustomerSelected(index + 1)
             setIdCustomer(true)
         })
         .catch((error) => {
@@ -111,8 +111,8 @@ export default function New(){
             //atualizando chamado
             const docRef = doc(db, 'chamados', id)
             await updateDoc(docRef, {
-                cliente: customers[customerSelected].nomeFantasia,
-                clienteId: customers[customerSelected].id,
+                cliente: customers[customerSelected - 1].nomeFantasia,
+                clienteId: customers[customerSelected - 1].id,
                 assunto: assunto,
                 complemento: complemento,
                 status: status,
@@ -135,8 +135,8 @@ export default function New(){
 
         await addDoc(collection(db, 'chamados'), {
             created: new Date(),
-            cliente: customers[customerSelected].nomeFantasia,
-            clienteId: customers[customerSelected].id,
+            cliente: customers[customerSelected - 1].nomeFantasia,
+            clienteId: customers[customerSelected - 1].id,
             assunto: assunto,
             complemento: complemento,
             status: status,
@@ -176,15 +176,16 @@ export default function New(){
                                 <input type='text' disabled={true} value='Carregando...' />
                             ) : (
                                 <select value={customerSelected} onChange={handleChangeCustomer}>
+                                    <option value={'0'} disabled={true} >Escolha um cliente</option>
 
                                     {customers.map((item, index) => {
-                                         return(
-                                             <option key={index} value={index} >
+                                        return(
+                                            <option key={index + 1} value={index + 1} >
                                                 {item.nomeFantasia}
-                                             </option>
-                                         )
-                                    })}
-
+                                            </option>
+                                        )
+                                    })
+                                    }
                                 </select>
                             )
                         }
@@ -208,7 +209,7 @@ export default function New(){
                                     onChange={handleOptionChange}
                                     checked={ status === 'Aberto' }
                                 />
-                                <label for='1'>Em aberto</label>
+                                <label htmlFor='1'>Em aberto</label>
                             </div>
                             <div className='opt'>
                                 <input
@@ -219,7 +220,7 @@ export default function New(){
                                     onChange={handleOptionChange}
                                     checked={ status === 'Progresso' }
                                 />
-                                <label for='2'>Progresso</label>
+                                <label htmlFor='2'>Progresso</label>
                             </div>
                             <div className='opt'>
                                 <input
@@ -230,14 +231,14 @@ export default function New(){
                                     onChange={handleOptionChange}
                                     checked={ status === 'Atendido' }
                                 />
-                                <label for='3'>Atendido</label>
+                                <label htmlFor='3'>Atendido</label>
                             </div>
                         </div>
                         
                         <label>Complemento</label>
                         <textarea
                             type='text'
-                            placeholder='Descreve seu problema (opacional)'
+                            placeholder='Descreve seu problema (opcional)'
                             value={complemento}
                             onChange={ (e) => setComplemento(e.target.value) }
                         />

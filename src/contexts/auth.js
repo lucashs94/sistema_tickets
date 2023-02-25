@@ -10,6 +10,7 @@ import { setDoc,
 import { auth, db } from '../services/firebaseConnection'
 import { toast } from 'react-toastify'
 import { useHistory } from 'react-router-dom'
+import { useContext } from 'react'
 
 export const AuthContext = createContext({})
 
@@ -22,6 +23,7 @@ export default function AuthProvider( {children} ){
 
   const history = useHistory()
 
+
   useEffect( () => {
 
     function loadStorage(){
@@ -33,6 +35,18 @@ export default function AuthProvider( {children} ){
       }
       setLoading(false)
     } 
+    
+    var interval = setInterval( () => {
+      
+      let timeLoginAfter = JSON.parse(localStorage.getItem('@t-tickets')) + (1000 * 60 * 15)
+      let timeNow = new Date().getTime() + 1000
+
+      if(timeLoginAfter < timeNow){
+        sign_Out()
+        clearInterval(interval)
+      }
+    }, (1000 * 15 * 3) )
+
     loadStorage()
   },[])
 
@@ -63,6 +77,7 @@ export default function AuthProvider( {children} ){
         pauseOnHover: false,
       })
 
+      localStorage.setItem('@t-tickets', JSON.stringify(new Date().getTime()))
       history.push("/dashboard")
     })
     .catch( (error) => {
@@ -129,11 +144,11 @@ export default function AuthProvider( {children} ){
   // Fazer LogOut do usuario
   async function sign_Out(){
     await signOut(auth)
-    localStorage.removeItem('@user_ticket')
+    localStorage.clear()
     setUser(null)
   }
 
-
+  
   return(
     <AuthContext.Provider 
       value={{ 
@@ -154,5 +169,4 @@ export default function AuthProvider( {children} ){
   )
 }
 
-// TODO: Implementar tempo de expiração de Login
-// TODO: Proibir retorno para login/register, se logado
+export const useAuth = () => useContext(AuthContext)

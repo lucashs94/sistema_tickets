@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom'
 
 export default function SignUp() {
 
+  const { signUp, loadingAuth } = useContext(AuthContext)
+  
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [nome, setNome] = useState('')
 
-  const { signUp, loadingAuth } = useContext(AuthContext)
 
   async function handleSubmit(e){
     e.preventDefault()
