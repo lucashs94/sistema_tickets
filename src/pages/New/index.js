@@ -201,33 +201,36 @@ export default function New(){
                         <div className='status'>
                             <div className='opt'>
                                 <input
+                                    id='1'
                                     type='radio'
                                     name='radio'
                                     value='Aberto'
                                     onChange={handleOptionChange}
                                     checked={ status === 'Aberto' }
                                 />
-                                <span>Em aberto</span>
+                                <label for='1'>Em aberto</label>
                             </div>
                             <div className='opt'>
                                 <input
+                                    id='2'
                                     type='radio'
                                     name='radio'
                                     value='Progresso'
                                     onChange={handleOptionChange}
                                     checked={ status === 'Progresso' }
                                 />
-                                <span>Progresso</span>
+                                <label for='2'>Progresso</label>
                             </div>
                             <div className='opt'>
                                 <input
+                                    id='3'
                                     type='radio'
                                     name='radio'
                                     value='Atendido'
                                     onChange={handleOptionChange}
                                     checked={ status === 'Atendido' }
                                 />
-                                <span>Atendido</span>
+                                <label for='3'>Atendido</label>
                             </div>
                         </div>
                         
